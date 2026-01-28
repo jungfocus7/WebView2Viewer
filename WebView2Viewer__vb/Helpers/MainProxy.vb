@@ -28,7 +28,7 @@ Public NotInheritable Class MainProxy
     ''' <returns></returns>
     Public Shared Function GetTitleText(Optional ics As String = Nothing) As String
         Dim dvi As String = "WebView2Viewer__vb"
-        Dim vnb As String = "v1.6.0"
+        Dim vnb As String = "v1.6.3"
         If Not String.IsNullOrWhiteSpace(ics) Then
             Return $"[ {dvi},  {vnb} ]   ""{ics}"""
         Else

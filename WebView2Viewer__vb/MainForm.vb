@@ -10,6 +10,8 @@ Imports WebView2Viewer__vb.Extensions
 Imports WebView2Viewer__vb.Helpers
 Imports WebView2Viewer__vb.Models
 Imports WebView2Viewer__vb.PopupForms
+Imports WV2VCSC.Helpers
+
 
 
 Public NotInheritable Class MainForm
@@ -193,12 +195,12 @@ Public NotInheritable Class MainForm
             End Try
         ElseIf tsi.Text.StartsWith("S) ") Then
             Try
-                AlertForm.Open(Me, "준비중")
+                'AlertForm.Open(Me, "준비중")
+                MessageBoxHelper.Show(Me, "준비중")
             Catch
             End Try
         ElseIf tsi.Text.StartsWith("A) ") Then
             Try
-                'AlertForm.Open(Me, "준비중")
                 WebView2_exta.GetHtmlText()
             Catch
             End Try
@@ -257,11 +259,15 @@ Public NotInheritable Class MainForm
     ''' <param name="ea"></param>
     Private Sub prBtnFunctionMouseDown(sd As Object, ea As MouseEventArgs)
         If ea.Button = MouseButtons.Right Then
-            Dim btnRct As Rectangle = RectangleToScreen(m_btnFunction.Bounds)
-            Dim cmsRct As Rectangle = RectangleToScreen(_cms.Bounds)
-            Dim pt As New Point(btnRct.Right - (cmsRct.Width + 4), btnRct.Top - (cmsRct.Height + 4))
-            _cms.Show(pt, ToolStripDropDownDirection.Default)
-            ActiveControl = m_btnFunction
+            If _cms.Visible Then
+                _cms.Close()
+            Else
+                Dim btnRct As Rectangle = RectangleToScreen(m_btnFunction.Bounds)
+                Dim cmsRct As Rectangle = RectangleToScreen(_cms.Bounds)
+                Dim pt As New Point(btnRct.Right - (cmsRct.Width + 4), btnRct.Top - (cmsRct.Height + 4))
+                _cms.Show(pt, ToolStripDropDownDirection.Default)
+                ActiveControl = m_btnFunction
+            End If
         End If
     End Sub
 #End Region
@@ -302,16 +308,17 @@ Public NotInheritable Class MainForm
                     'AlertForm.Open(Me, htmlText)
                     Try
                         DataHelper.SaveHtmlText(htmlText)
-                        AlertForm.Open(Me, "저장 성공")
+                        'AlertForm.Open(Me, "저장 성공")
+                        MessageBoxHelper.Show(Me, "저장 성공")
                     Catch
-                        AlertForm.Open(Me, "저장 에러")
+                        'AlertForm.Open(Me, "저장 에러")
+                        MessageBoxHelper.Show(Me, "저장 에러")
                     End Try
 
                     MainProxy.GCCall()
                 End If
+
         End Select
-
-
     End Sub
 
 
@@ -431,10 +438,11 @@ Public NotInheritable Class MainForm
         MyBase.WndProc(m)
     End Sub
 
+
     Private Sub prAfterInit()
         HotkeyHelper.AddHotkey(New HotkeyInfo() With {
             .hwnd = Handle,
-            .fsModifiers = HotkeyHelper.Kmf_None,
+            .fsModifiers = HotkeyHelper.Kmf_Alt,
             .vk = Keys.Apps,
             .cbf =
                 Sub()
@@ -449,6 +457,8 @@ Public NotInheritable Class MainForm
             End Sub
     End Sub
 #End Region
+
+
 
 
 
@@ -543,15 +553,6 @@ Public NotInheritable Class MainForm
     '    KeyPreview = True
     'End Sub
 #End Region
-
-
-
-
-
-
-
-
-
 
 
 #Region "######################################################### 코드 백업"
