@@ -23,10 +23,36 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Me.m_btnFunction = New CustomControls.ButtnEx71()
         Me.m_txbInput = New System.Windows.Forms.TextBox()
         Me.m_panelRoot = New System.Windows.Forms.Panel()
+        Me.m_btnFunction = New WebView2Viewer__vb.CustomControls.ButtnEx71()
         Me.SuspendLayout()
+        '
+        'm_txbInput
+        '
+        Me.m_txbInput.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.m_txbInput.BackColor = System.Drawing.SystemColors.Window
+        Me.m_txbInput.Enabled = False
+        Me.m_txbInput.ForeColor = System.Drawing.SystemColors.ScrollBar
+        Me.m_txbInput.Location = New System.Drawing.Point(6, 561)
+        Me.m_txbInput.Margin = New System.Windows.Forms.Padding(0)
+        Me.m_txbInput.Name = "m_txbInput"
+        Me.m_txbInput.ReadOnly = True
+        Me.m_txbInput.Size = New System.Drawing.Size(666, 23)
+        Me.m_txbInput.TabIndex = 2
+        '
+        'm_panelRoot
+        '
+        Me.m_panelRoot.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.m_panelRoot.BackColor = System.Drawing.Color.LightGray
+        Me.m_panelRoot.Location = New System.Drawing.Point(0, 0)
+        Me.m_panelRoot.Margin = New System.Windows.Forms.Padding(0)
+        Me.m_panelRoot.Name = "m_panelRoot"
+        Me.m_panelRoot.Size = New System.Drawing.Size(800, 546)
+        Me.m_panelRoot.TabIndex = 4
         '
         'm_btnFunction
         '
@@ -42,32 +68,6 @@ Partial Class MainForm
         Me.m_btnFunction.TabIndex = 1
         Me.m_btnFunction.Text = "GO"
         Me.m_btnFunction.UseVisualStyleBackColor = False
-        '
-        'm_txbInput
-        '
-        Me.m_txbInput.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.m_txbInput.BackColor = System.Drawing.SystemColors.Window
-        Me.m_txbInput.Enabled = False
-        Me.m_txbInput.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.m_txbInput.Location = New System.Drawing.Point(4, 561)
-        Me.m_txbInput.Margin = New System.Windows.Forms.Padding(0)
-        Me.m_txbInput.Name = "m_txbInput"
-        Me.m_txbInput.ReadOnly = True
-        Me.m_txbInput.Size = New System.Drawing.Size(668, 23)
-        Me.m_txbInput.TabIndex = 2
-        '
-        'm_panelRoot
-        '
-        Me.m_panelRoot.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.m_panelRoot.BackColor = System.Drawing.Color.LightGray
-        Me.m_panelRoot.Location = New System.Drawing.Point(0, 0)
-        Me.m_panelRoot.Margin = New System.Windows.Forms.Padding(0)
-        Me.m_panelRoot.Name = "m_panelRoot"
-        Me.m_panelRoot.Size = New System.Drawing.Size(800, 546)
-        Me.m_panelRoot.TabIndex = 4
         '
         'MainForm
         '

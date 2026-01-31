@@ -153,11 +153,8 @@ Namespace CustomControls
         'End Sub
 
         Public Shared Async Sub GetHtmlText()
-            'Dim tx = _cwv2.Source
-            Dim txt As String = Await _wv2ex.ExecuteScriptAsync("fn_getHtmlText();")
-            If Not txt Is Nothing Then
-                DebugHelper.Alert(txt)
-            End If
+            If _wv2ex Is Nothing Then Return
+            Await _wv2ex.ExecuteScriptAsync("fn_getHtmlText();")
         End Sub
 
 

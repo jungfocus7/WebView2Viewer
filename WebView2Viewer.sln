@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34931.43
+# Visual Studio 15
+VisualStudioVersion = 15.0.35319.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebView2Viewer__vb", "WebView2Viewer__vb\WebView2Viewer__vb.vbproj", "{7D186B56-A7ED-4CEA-95EE-A0F4FC9A30B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WV2VCSC", "WV2VCSC\WV2VCSC.csproj", "{A2911A16-E6BF-438A-8E60-3F2153D4F764}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7D186B56-A7ED-4CEA-95EE-A0F4FC9A30B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D186B56-A7ED-4CEA-95EE-A0F4FC9A30B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D186B56-A7ED-4CEA-95EE-A0F4FC9A30B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2911A16-E6BF-438A-8E60-3F2153D4F764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2911A16-E6BF-438A-8E60-3F2153D4F764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2911A16-E6BF-438A-8E60-3F2153D4F764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2911A16-E6BF-438A-8E60-3F2153D4F764}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

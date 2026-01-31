@@ -83,7 +83,6 @@ Namespace Helpers
                 ' 메인폼이 활성화 중이면
                 If Form.ActiveForm Is frm Then
                     Dim wp As Integer = m.WParam.ToInt32()
-
                     For Each hki As HotkeyInfo In _hotkeyInfos
                         If hki.id = wp Then
                             hki.cbf()

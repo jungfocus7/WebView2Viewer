@@ -23,23 +23,26 @@ Namespace Helpers
         End Property
 
 
-        Public Shared IsUseAlert As Boolean = False
-        ''' <summary>
-        ''' 메세지 출력
-        ''' </summary>
-        Public Shared Sub Alert(msg As String)
-            If IsUseAlert Then
-                MsgBox(msg)
-                'AlertForm.Open(MainForm, msg)
-            End If
-        End Sub
+        'Public Shared IsUseAlert As Boolean = False
+        '''' <summary>
+        '''' 메세지 출력
+        '''' </summary>
+        'Public Shared Sub Alert(msg As String)
+        '    If IsUseAlert Then
+        '        MsgBox(msg)
+        '        'AlertForm.Open(MainForm, msg)
+        '    End If
+        'End Sub
 
 
+        Private Const _frb As String = "[hb] "
         ''' <summary>
         ''' 로그 출력
         ''' </summary>
         Public Shared Sub Log(msg As String)
-            Debug.WriteLine(msg)
+            Dim txt As String = _frb & msg
+            Debug.WriteLine(txt)
+            'Trace.WriteLine(txt)
         End Sub
     End Class
 End Namespace
